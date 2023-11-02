@@ -1,69 +1,221 @@
 /* Reset CSS styles for universal elements */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures that padding and border are included in the total width and height */
 }
 
 /* Define custom variables */
-:root{
-    --sidebar-color: mediumblue; /* Sidebar background color */
+:root {
+  font-family: "Inter", sans-serif; /* Sets a default font for the website */
+  --sidebar-color: rgba(
+    0,
+    120,
+    205,
+    0.823
+  ); /* Sidebar background color as a CSS variable for easy maintenance */
 }
 
 /* Main container layout settings */
-.main-container{
-    display: grid;
-    grid-template-columns: 0.75fr 3fr; /* Sidebar takes 25%, main content takes 75% of the width */
-    height: 100vh; /* Full viewport height */
+.main-container {
+  display: grid; /* Establishes a grid layout for main container */
+  grid-template-columns: 0.75fr 3fr; /* Sidebar takes 25%, main content takes 75% of the width */
+  height: 100vh; /* Sets the height of the container to be the full height of the viewport */
 }
 
 /* Styling for the main dashboard content area */
-.dashboard-content{
-    background-color: azure;
+.dashboard-content {
+  background-color: azure; /* Sets the background color for the dashboard content area */
 }
 
 /* Sidebar styles */
-.sidebar{
-    background-color: var(--sidebar-color); /* Using custom variable */
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    color: aliceblue;
+.sidebar {
+  background-color: var(
+    --sidebar-color
+  ); /* Applies the custom variable for the sidebar background color */
+  display: flex; /* Establishes a flexbox layout for the sidebar */
+  flex-direction: column; /* Aligns sidebar items vertically */
+  gap: 20px; /* Adds space between items in the sidebar */
+  padding: 20px; /* Adds padding around the sidebar content */
+  font-weight: bold; /* Makes the sidebar text bold */
+  color: aliceblue; /* Sets the sidebar text color to a light blue for visibility against the darker background */
 }
 
 /* Styles for dashboard section in sidebar */
-.sidebar-dashboard{
-    display: flex;
-    gap: 10px;
-    font-size: 26px;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+.sidebar-dashboard {
+  display: flex; /* Establishes a flexbox layout for dashboard items */
+  gap: 10px; /* Adds space between the icon and text */
+  font-size: 26px; /* Sets the font size for the dashboard section items */
+  align-items: center; /* Vertically centers items in the sidebar dashboard */
+  padding-left: 20px; /* Adds padding to the left of sidebar dashboard items */
+  padding-right: 20px; /* Adds padding to the right of sidebar dashboard items */
 }
 
 /* Styles for icons (if used) */
-.icon_dashboard{
-    font-size: 1.5em;
+.icon_dashboard {
+  font-size: 1.5em; /* Sets the size of the icons in the dashboard */
 }
 
 /* Common styles for list items in sidebar */
-.sidebar-settings>ul>li,
-.sidebar-home>ul>li{
-    padding: 20px 0 0 30px;
+.sidebar-settings > ul > li,
+.sidebar-home > ul > li {
+  padding: 20px 0 0 30px; /* Adds padding to list items for spacing from the sidebar edge */
 }
 
 /* Styles for menu items in sidebar */
-.sidebar-settings>ul>li.menu-item,
-.sidebar-home>ul>li.menu-item{
-    display: flex;
-    gap: 20px;
-    align-items: center;
+.sidebar-settings > ul > li.menu-item,
+.sidebar-home > ul > li.menu-item {
+  display: flex; /* Establishes a flexbox layout for menu items */
+  gap: 20px; /* Adds space between the icon and text in menu items */
+  align-items: center; /* Vertically centers the content in menu items */
 }
 
 /* Remove bullet points from ul */
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none; /* Removes the default list item bullet points for a cleaner look */
+}
+
+/* Dashboard main part layout */
+.dashboard-content {
+  display: grid; /* Establishes a grid layout for dashboard content */
+  grid-template: 1fr 4fr / 2.5fr 1fr; /* Defines the grid template rows and columns for content layout */
+  gap: 20px; /* Adds space between the grid items */
+}
+
+/* Navigation bar styles */
+.dashboard-navbar {
+  /* background-color: red; */ /* Unused background color for the navbar, can be removed or uncommented */
+  grid-column: 1/3; /* Spans the navbar across both columns of the grid */
+}
+
+/* Search bar grid layout */
+.navbar-search {
+  display: grid; /* Establishes a grid layout for the search bar */
+  grid-template-columns: 3fr 1.2fr; /* Defines the column sizes for the search bar and adjacent elements */
+}
+
+/* Search bar styles */
+.search {
+  display: flex; /* Establishes a flexbox layout for the search container */
+  padding-top: 40px; /* Adds padding to the top of the search container */
+  padding-left: 40px; /* Adds padding to the left of the search container */
+}
+.search > ul {
+  display: flex; /* Establishes a flexbox layout for the search list */
+  width: 95%; /* Sets the width of the search list to 95% of its container */
+}
+
+/* Search bar list item styles */
+.search > ul > li {
+  margin-left: 10px; /* Adds left margin to each list item for spacing */
+}
+
+/* Styles for search input field */
+.search-item-input {
+  width: 100%; /* Sets the search input to take the full width of its container */
+}
+
+/* Styling for text input fields */
+.search input[type="text"] {
+  width: 100%; /* Sets the width of the input field to 100% */
+  border-radius: 10px; /* Rounds the corners of the input field */
+  padding: 5px; /* Adds padding inside the input field for text spacing */
+  border: 2px solid gray; /* Sets the border of the input field */
+}
+
+/* Placeholder text styling */
+::placeholder {
+  color: black; /* Sets the color of the placeholder text */
+}
+
+/* Profile and messages styles */
+.navbar-profile-messages > ul {
+  display: flex; /* Establishes a flexbox layout for the profile and messages list */
+  padding-top: 40px; /* Adds padding to the top of the profile/messages container */
+  justify-content: center; /* Centers the list items horizontally */
+  align-items: center; /* Centers the list items vertically */
+}
+
+/* Profile and messages list item styles */
+.navbar-profile-messages > ul > li {
+  margin-left: 20px; /* Adds left margin to each list item for spacing */
+  font-weight: bolder; /* Makes the text of the list items bold */
+  font-size: large; /* Increases the font size of the list items for better readability */
+}
+
+/* Styles for nav items */
+.nav-item {
+  font-size: 2em; /* Sets the font size of the nav items to be quite large for emphasis */
+}
+
+/* Logging section grid layout */
+.navbar-logging {
+  display: grid; /* Establishes a grid layout for the logging section */
+  grid-template-columns: 3fr 1.2fr; /* Defines the column sizes for the logging section */
+}
+
+/* Email section styles */
+.navbar-email {
+  display: flex; /* Establishes a flexbox layout for the email section */
+  padding-top: 20px; /* Adds padding to the top of the email section */
+  padding-bottom: 10px; /* Adds padding to the bottom of the email section */
+  gap: 20px; /* Adds space between items in the email section */
+  align-items: center; /* Vertically centers items in the email section */
+}
+
+/* Styles for email list item */
+.navbar-email-item {
+  padding-left: 40px; /* Adds padding to the left of the email list item */
+}
+
+/* Email icon styles */
+.email-icon {
+  font-size: 3em; /* Sets the size of the email icon to be very large for emphasis */
+}
+
+/* Greeting text styles in the email section */
+.email-text-greet {
+  font-size: smaller; /* Sets the size of the greeting text to be smaller than the main email text */
+  font-weight: bolder; /* Makes the greeting text bold */
+}
+/* Main email text styles */
+.email-text {
+  font-size: large; /* Increases the font size for the main email text for visibility */
+  font-weight: bolder; /* Makes the main email text bold */
+}
+
+/* Control buttons styling */
+.navbar-control-buttons {
+  display: flex; /* Establishes a flexbox layout for control buttons */
+  align-items: center; /* Vertically centers the control buttons */
+  justify-content: center; /* Horizontally centers the control buttons within their container */
+}
+
+/* Button element styles */
+button {
+  margin: 10px; /* Adds margin around buttons for spacing */
+  padding: 5px 25px 5px 25px; /* Adds padding inside buttons for text spacing */
+  border-radius: 15px; /* Rounds the corners of the buttons */
+  color: whitesmoke; /* Sets the text color inside the buttons to whitesmoke for contrast */
+  background-color: var(
+    --sidebar-color
+  ); /* Uses the sidebar color variable for the button background */
+  border: var(
+    --sidebar-color
+  ); /* Sets the button border to be the same color as the background for a seamless look */
+}
+
+/* Additional styles for navbar control buttons (uncommented background color) */
+.navbar-control-buttons {
+  /* background-color: aquamarine; */
+}
+
+/* Project section styles */
+.dashboard-projects {
+  background-color: aqua; /* Sets a distinct background color for the project section for differentiation */
+}
+
+/* Announcement and trends section styles */
+.dashboard-announcement-trends {
+  background-color: green; /* Sets a distinct background color for the announcement and trends section for differentiation */
 }

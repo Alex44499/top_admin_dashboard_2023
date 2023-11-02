@@ -1,71 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Inter:wght@500&family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    
-    <!-- Material Icons CSS -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Importing Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Inter:wght@500&family=Noto+Sans+JP&display=swap"
+    rel="stylesheet"
+  />
 
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+  <!-- Importing Material Icons for usage within the webpage -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
 
-    <!-- Title of the Page -->
-    <title>Admin dashboard</title>
-  </head>
-  <body>
-    <!-- Main Container for Dashboard -->
-    <div class="main-container">
+  <!-- Linking the main stylesheet for styling the webpage -->
+  <link rel="stylesheet" href="style.css" />
 
-      <!-- Sidebar Section -->
-      <div class="sidebar">
-        
-        <!-- Dashboard Icon and Text -->
-        <div class="sidebar-dashboard">
-          <span class="material-symbols-outlined icon_dashboard"> crowdsource </span>
-          <p class="tex">Dashboard</p>
-        </div>
-
-        <!-- Home Section with Various Options -->
-        <div class="sidebar-home">
-          <ul>
-            <!-- List items for home, profile, messages, etc. -->
-            <li class="menu-item"><span class="material-symbols-outlined menu-icon"> home </span> Home</li>
-            <li class="menu-item"><span class="material-symbols-outlined menu-icon"> account_circle </span> Profile</li>
-            <li class="menu-item"><span class="material-symbols-outlined menu-icon"> comment </span> Messages</li>
-            <li class="menu-item"><span class="material-symbols-outlined menu-icon"> history </span> History</li>
-            <li class="menu-item"><span class="material-symbols-outlined menu-icon"> task </span> Tasks</li>
-            <li class="menu-item"><span class="material-symbols-outlined menu-icon"> communities </span> Communities</li>
-          </ul>
-        </div>
-
-        <!-- Settings Section -->
-        <div class="sidebar-settings">
-          <ul>
-            <!-- List items for settings, support, privacy -->
-            <li class="menu-item"><span class="material-symbols-outlined"> settings </span> Settings</li>
-            <li class="menu-item"><span class="material-symbols-outlined"> help </span> Support</li>
-            <li class="menu-item"><span class="material-symbols-outlined"> verified_user </span> Privacy</li>
-          </ul>
-        </div>
-
+  <!-- Title that appears on the browser tab -->
+  <title>Admin dashboard</title>
+</head>
+<body>
+  <!-- The container that wraps the whole dashboard content -->
+  <div class="main-container">
+    <!-- Sidebar navigation section -->
+    <div class="sidebar">
+      <!-- Section for dashboard navigation icon and label -->
+      <div class="sidebar-dashboard">
+        <!-- Icon for the dashboard, using Material Icons -->
+        <span class="material-symbols-outlined icon_dashboard">
+          crowdsource
+        </span>
+        <!-- Text label for the dashboard icon -->
+        <p class="tex">Dashboard</p>
       </div>
 
-      <!-- Main Dashboard Content Section -->
-      <div class="dashboard-content">
-        <div class="navbar"></div>
+      <!-- Navigation section for different pages like home, profile, etc. -->
+      <div class="sidebar-home">
+        <ul>
+          <!-- Navigation item for home -->
+          <li class="menu-item">
+            <span class="material-symbols-outlined menu-icon"> home </span>
+            Home
+          </li>
+          <!-- Navigation item for profile -->
+          <li class="menu-item">
+            <span class="material-symbols-outlined menu-icon">
+              account_circle
+            </span>
+            Profile
+          </li>
+          <!-- Navigation item for messages -->
+          <li class="menu-item">
+            <span class="material-symbols-outlined menu-icon"> comment </span>
+            Messages
+          </li>
+          <!-- Navigation item for history -->
+          <li class="menu-item">
+            <span class="material-symbols-outlined menu-icon"> history </span>
+            History
+          </li>
+          <!-- Navigation item for tasks -->
+          <li class="menu-item">
+            <span class="material-symbols-outlined menu-icon"> task </span>
+            Tasks
+          </li>
+          <!-- Navigation item for communities -->
+          <li class="menu-item">
+            <span class="material-symbols-outlined menu-icon">
+              communities
+            </span>
+            Communities
+          </li>
+        </ul>
+      </div>
+
+      <!-- Settings section with options for configuration -->
+      <div class="sidebar-settings">
+        <ul>
+          <!-- Option for adjusting settings -->
+          <li class="menu-item">
+            <span class="material-symbols-outlined"> settings </span> Settings
+          </li>
+          <!-- Option for help/support -->
+          <li class="menu-item">
+            <span class="material-symbols-outlined"> help </span> Support
+          </li>
+          <!-- Option for privacy settings -->
+          <li class="menu-item">
+            <span class="material-symbols-outlined"> verified_user </span>
+            Privacy
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- The main content area of the dashboard -->
+    <div class="dashboard-content">
+      <!-- Top navigation bar within the dashboard -->
+      <div class="dashboard-navbar">
+        <div class="navbar">
+          <!-- Search bar section -->
+          <div class="navbar-search">
+            <div class="search">
+              <ul>
+                <!-- Search icon within the search bar -->
+                <li class="search-item-symbol">
+                  <span class="material-symbols-outlined search-icon"
+                    >search</span
+                  >
+                </li>
+                <!-- Input field for search functionality -->
+                <li class="search-item-input">
+                  <input type="text" placeholder="Search.." />
+                </li>
+              </ul>
+            </div>
+
+            <!-- Profile and message notifications section -->
+            <div class="navbar-profile-messages">
+              <ul>
+                <!-- Notification bell icon -->
+                <li class="navbar-item">
+                  <span class="material-symbols-outlined">notifications</span>
+                </li>
+                <!-- Account icon for profile -->
+                <li class="navbar-item">
+                  <span class="material-symbols-outlined nav-item">
+                    account_circle
+                  </span>
+                </li>
+                <!-- Display name of the user -->
+                <li class="navbar-item-name">Alex S</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- User login and control section -->
+          <div class="navbar-logging">
+            <!-- Email and greeting display -->
+            <div class="navbar-email">
+              <div class="navbar-email-item">
+                <!-- Account icon for email -->
+                <span class="material-symbols-outlined email-icon">
+                  account_circle
+                </span>
+              </div>
+
+              <!-- Greeting text next to the account icon -->
+              <div class="text-wellcome">
+                <p class="email-text-greet">Hi there,</p>
+                <!-- User's name and username -->
+                <p class="email-text">Alex S (@alex)</p>
+              </div>
+            </div>
+
+            <!-- Control buttons for user actions -->
+            <div class="navbar-control-buttons">
+              <button>New</button>
+              <button>Upload</button>
+              <button>Share</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section for displaying current projects -->
+      <div class="dashboard-projects">
         <div class="projects"></div>
+      </div>
+
+      <!-- Section for announcements and trending topics -->
+      <div class="dashboard-announcement-trends">
         <div class="announcements"></div>
         <div class="trending"></div>
       </div>
-
     </div>
-  </body>
+  </div>
+</body>
 </html>
